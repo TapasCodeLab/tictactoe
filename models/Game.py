@@ -10,7 +10,7 @@ class Game:
         self.board = Board(self.dimension)
         self.game_status = GameStatus.IN_PROGRESS
         self.winner = None
-        self.next_player = random.randint(0,self.dimension-1)
+        self.next_player = 0 #random.randint(0,self.dimension-1)
 
     @staticmethod
     def gameBuilder():

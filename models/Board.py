@@ -9,4 +9,7 @@ class Board:
 
 
     def printBoard(self):
-        pass
+        for row in self.board:
+            for cell in row:
+                cell.printCell()
+            print('|')

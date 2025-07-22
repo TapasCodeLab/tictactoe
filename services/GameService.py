@@ -1,3 +1,4 @@
+from models.CellStatus import CellStatus
 
 
 class GameService:
@@ -12,4 +13,16 @@ class GameService:
                      .set_winning_strategies(winning_strategies)
                      .build())
 
+
+    def print_board(self, game):
+        game.board.printBoard()
+
+
+    def make_move(self,game):
+        current_player = game.players[game.next_player]
+        print(f'Next turn is of: {current_player.name}')
+        cell = current_player.decide_cell(game.board)
+        cell.cell_status = CellStatus.FILLED
+        cell.player = current_player
+        game.next_player = (game.next_player+1) % len(game.players)
 

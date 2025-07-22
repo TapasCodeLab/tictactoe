@@ -10,8 +10,8 @@ class Cell:
 
     def printCell(self):
         if self.cell_status == CellStatus.EMPTY:
-            print('|_|', end='')
+            print('|-', end='')
         elif self.cell_status == CellStatus.FILLED:
-            print(f'|{self.player.symbol.symbol}|',end='')
+            print(f'|{self.player.symbol.symbol}',end='')
         else:
-            print('|B|',end='')
+            print('|B',end='')
